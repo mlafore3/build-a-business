@@ -26,7 +26,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('hello', state.token)
   return { token: state.token };
 }
 

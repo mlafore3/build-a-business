@@ -8,9 +8,11 @@ export function setToken() {
 	const request = axios.post(url, {
 			username: 'mlaforet',
 			password: 'changeme',
-		}).then(response => {
-			console.log(response.data);
-		});
+		})
+	// .then(response => {
+	// 		console.log('he', response.data);
+	// 	});
+	console.log('h', request);
 	return {
 		type: SET_TOKEN,
 		payload: request,
