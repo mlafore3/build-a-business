@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import '../styles/App.css';
 import { setToken } from '../actions/index';
+
+
+axios.defaults.withCredentials = true;
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
 
 class App extends Component {
   constructor(props) {
@@ -13,18 +19,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>Hello!</p>
+        <p>Hell</p>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { token: state.setToken };
+  console.log('hello', state.token)
+  return { token: state.token };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setToken: setToken }, dispatch);
+  return bindActionCreators({ setToken }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

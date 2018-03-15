@@ -1,24 +1,18 @@
-// import * as actionType from './types';
-
-// export const setToken = (data) => {
-//   return {
-//     type: actionType.SET_TOKEN,
-//     data
-//   }
-// }
-
-
-//import axios from 'axios';
+import axios from 'axios';
 // import { URL, LOGIN } from '../Api';
 
 export const SET_TOKEN = 'SET_TOKEN';
 
 export function setToken() {
-	//const url = URL + LOGIN;
-	//const request = axios.post(url);
-  return {
-    type: SET_TOKEN,
-    payload: 'hello',
-    // payload: request,
-  };
+	const url = 'http://127.0.0.1:8000/auth';
+	const request = axios.post(url, {
+			username: 'mlaforet',
+			password: 'changeme',
+		}).then(response => {
+			console.log(response.data);
+		});
+	return {
+		type: SET_TOKEN,
+		payload: request,
+	};
 }

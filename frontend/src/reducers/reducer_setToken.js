@@ -1,10 +1,10 @@
-//import { SET_TOKEN } from '../actions/index';
+import { SET_TOKEN } from '../actions/index';
 
 export default function (state = null, action) {
 	switch (action.type) {
-		case 'SET_TOKEN':
+		case SET_TOKEN:
+			console.log(action.payload);
 			return action.payload;
-			//return action.payload.data
 		default:
 			return state;
 	}
