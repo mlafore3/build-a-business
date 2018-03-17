@@ -6,10 +6,6 @@ import '../styles/App.css';
 import { setToken } from '../actions/index';
 
 
-axios.defaults.withCredentials = true;
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
 class App extends Component {
   constructor(props) {
     super(props);

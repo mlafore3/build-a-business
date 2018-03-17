@@ -9,7 +9,6 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './components/App';
 import reducers from './reducers';
 
-//import registerServiceWorker from './registerServiceWorker';
 axios.defaults.withCredentials = true;
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";

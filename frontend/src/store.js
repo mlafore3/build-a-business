@@ -1,6 +1,6 @@
 import { compose, createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
-import { persistStore, autoRehydrate } from 'redux-persist';
+import { persistStore } from 'redux-persist';
 import rootReducer from './reducers';
 
 const store = createStore(
@@ -8,9 +8,7 @@ const store = createStore(
   compose(
     applyMiddleware(
       createLogger(),
-    ),
-    //autoRehydrate()
-  )
+    )
 );
 persistStore(store);
 export default store;
