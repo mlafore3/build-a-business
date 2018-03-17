@@ -1,4 +1,5 @@
 import axios from 'axios';
+// This import doesn't work 
 // import { URL, LOGIN } from '../Api';
 
 export const SET_TOKEN = 'SET_TOKEN';
@@ -9,10 +10,6 @@ export function setToken() {
 			username: 'mlaforet',
 			password: 'changeme',
 		})
-	// .then(response => {
-	// 		console.log('he', response.data);
-	// 	});
-	console.log('h', request);
 	return {
 		type: SET_TOKEN,
 		payload: request,

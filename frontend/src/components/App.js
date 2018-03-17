@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import '../styles/App.css';
@@ -12,10 +11,13 @@ class App extends Component {
     this.state = { token: null };
     this.props.setToken();
   }
-  render() {
+  render() {    
+    if (!this.props.token) {
+      return <h1>Loading</h1>;
+    }
     return (
       <div>
-        <p>Hell</p>
+        <h1>Token Set!</h1>
       </div>
     );
   }
